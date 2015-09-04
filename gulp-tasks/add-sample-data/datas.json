@@ -1,0 +1,202 @@
+[
+  {
+    "image": "http://it-ebooks.info/images/ebooks/3/effective_devops_early_release.jpg",
+    "description": "This practical guide addresses technical, cultural, and managerial challenges of implementing and maintaining a DevOps culture by describing failures and successes. Authors Katherine Daniels and Jennifer Davis provide with actionable strategies you c...",
+    "image/_source": "/images/ebooks/3/effective_devops_early_release.jpg",
+    "image/_alt": "Effective DevOps",
+    "title/_source": "/book/6216/",
+    "title": "http://it-ebooks.info/book/6216/",
+    "title/_title": "Effective DevOps",
+    "title/_text": "Effective DevOps"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/3/designing_for_scalability_with_erlangotp_early_release.jpg",
+    "description": "Design and build complex, scalable commercial-grade systems with the Open Telecom Platform (OTP), the open source system developed by Ericsson and written in Erlang. With this hands-on book, you'll learn how to apply OTP libraries and techniques to d...",
+    "image/_source": "/images/ebooks/3/designing_for_scalability_with_erlangotp_early_release.jpg",
+    "image/_alt": "Designing for Scalability with Erlang/OTP",
+    "title/_source": "/book/6214/",
+    "title": "http://it-ebooks.info/book/6214/",
+    "title/_title": "Designing for Scalability with Erlang/OTP",
+    "title/_text": "Designing for Scalability with Erlang/OTP"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/3/infrastructure_as_code_early_release.jpg",
+    "description": "This book explains how to take advantage of technologies like cloud, virtualization, and configuration automation to manage IT infrastructure using tools and practices from software development. These technologies have decoupled infrastructure from t...",
+    "image/_source": "/images/ebooks/3/infrastructure_as_code_early_release.jpg",
+    "image/_alt": "Infrastructure as Code",
+    "title/_source": "/book/6212/",
+    "title": "http://it-ebooks.info/book/6212/",
+    "title/_title": "Infrastructure as Code",
+    "title/_text": "Infrastructure as Code"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/3/you_dont_know_js_es6__beyond_early_release.jpg",
+    "description": "No matter how much experience you have with JavaScript, odds are you don't fully understand the language. As part of the \"You Don't Know JS\" series, this compact guide focuses on the new features that will be available to developers in ECMA...",
+    "image/_source": "/images/ebooks/3/you_dont_know_js_es6__beyond_early_release.jpg",
+    "image/_alt": "You Don't Know JS: ES6 & Beyond",
+    "title/_source": "/book/6210/",
+    "title": "http://it-ebooks.info/book/6210/",
+    "title/_title": "You Don't Know JS: ES6 & Beyond",
+    "title/_text": "You Don't Know JS: ES6 & Beyond"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/3/prototype_to_product_early_release.jpg",
+    "description": "Product development is the magic that turns circuitry, software, and materials into a product, but moving efficiently from concept to manufactured product is a complex process with many potential pitfalls. This practical guide pulls back the curtain ...",
+    "image/_source": "/images/ebooks/3/prototype_to_product_early_release.jpg",
+    "image/_alt": "Prototype to Product",
+    "title/_source": "/book/6208/",
+    "title": "http://it-ebooks.info/book/6208/",
+    "title/_title": "Prototype to Product",
+    "title/_text": "Prototype to Product"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/14/machine_learning_with_r_2nd_edition.jpg",
+    "description": "Updated and upgraded to the latest libraries and most modern thinking, Machine Learning with R, Second Edition provides you with a rigorous introduction to this essential skill of professional data science. Without shying away from technical theory, ...",
+    "image/_source": "/images/ebooks/14/machine_learning_with_r_2nd_edition.jpg",
+    "image/_alt": "Machine Learning with R, 2nd Edition",
+    "title/_source": "/book/6206/",
+    "title": "http://it-ebooks.info/book/6206/",
+    "title/_title": "Machine Learning with R, 2nd Edition",
+    "title/_text": "Machine Learning with R, 2nd Edition"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/14/learning_docker.jpg",
+    "description": "Docker is a next-generation platform for simplifying application containerization life-cycle. Docker allows you to create a robust and resilient environment in which you can generate portable, composable, scalable, and stable application containers. ...",
+    "image/_source": "/images/ebooks/14/learning_docker.jpg",
+    "image/_alt": "Learning Docker",
+    "title/_source": "/book/6204/",
+    "title": "http://it-ebooks.info/book/6204/",
+    "title/_title": "Learning Docker",
+    "title/_text": "Learning Docker"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/14/learning_pandas.jpg",
+    "description": "This learner's guide will help you understand how to use the features of pandas for interactive data manipulation and analysis. This book is your ideal guide to learning about pandas, all the way from installing it to creating one- and two-dimensi...",
+    "image/_source": "/images/ebooks/14/learning_pandas.jpg",
+    "image/_alt": "Learning pandas",
+    "title/_source": "/book/6202/",
+    "title": "http://it-ebooks.info/book/6202/",
+    "title/_title": "Learning pandas",
+    "title/_text": "Learning pandas"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/14/apache_mesos_essentials.jpg",
+    "description": "Apache Mesos is a cluster manager that provides efficient resource isolation and sharing across distributed applications, or frameworks. It allows developers to concurrently run the likes of Hadoop, Spark, Storm, and other applications on a dynamical...",
+    "image/_source": "/images/ebooks/14/apache_mesos_essentials.jpg",
+    "image/_alt": "Apache Mesos Essentials",
+    "title/_source": "/book/6200/",
+    "title": "http://it-ebooks.info/book/6200/",
+    "title/_title": "Apache Mesos Essentials",
+    "title/_text": "Apache Mesos Essentials"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/14/wildfly_cookbook.jpg",
+    "description": "With the increasing demand for distributed systems for Java applications, WildFly offers a robust platform on which to deploy and manage your services. As a matter of fact, WildFly 9 is a fully certified Java EE 7 platform and provides remote managem...",
+    "image/_source": "/images/ebooks/14/wildfly_cookbook.jpg",
+    "image/_alt": "WildFly Cookbook",
+    "title/_source": "/book/6198/",
+    "title": "http://it-ebooks.info/book/6198/",
+    "title/_title": "WildFly Cookbook",
+    "title/_text": "WildFly Cookbook"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/3/monitoring_with_graphite_early_release.jpg",
+    "description": "Why is Graphite one of the most popular tools for monitoring and graphing the performance of computer systems? This practical book helps you use this open source tool to track the operational data you need to monitor your systems and track applicatio...",
+    "image/_source": "/images/ebooks/3/monitoring_with_graphite_early_release.jpg",
+    "image/_alt": "Monitoring with Graphite",
+    "title/_source": "/book/6215/",
+    "title": "http://it-ebooks.info/book/6215/",
+    "title/_title": "Monitoring with Graphite",
+    "title/_text": "Monitoring with Graphite"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/3/articulating_design_decisions_early_release.jpg",
+    "description": "Every designer has had to justify designs to non-designers, yet most lack the ability to explain themselves in a way that is compelling and fosters agreement. The ability to effectively articulate design decisions is critical to the success of a proj...",
+    "image/_source": "/images/ebooks/3/articulating_design_decisions_early_release.jpg",
+    "image/_alt": "Articulating Design Decisions",
+    "title/_source": "/book/6213/",
+    "title": "http://it-ebooks.info/book/6213/",
+    "title/_title": "Articulating Design Decisions",
+    "title/_text": "Articulating Design Decisions"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/3/mapping_experiences_early_release.jpg",
+    "description": "If you want to create products and services that provide real value, you should first identify touchpoints—areas where business and customer needs intersect. This practical book shows you how. Using various mapping techniques from UX design, you'll...",
+    "image/_source": "/images/ebooks/3/mapping_experiences_early_release.jpg",
+    "image/_alt": "Mapping Experiences",
+    "title/_source": "/book/6211/",
+    "title": "http://it-ebooks.info/book/6211/",
+    "title/_title": "Mapping Experiences",
+    "title/_text": "Mapping Experiences"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/3/thinking_in_promises.jpg",
+    "description": "Imagine a set of simple principles that could help you to understand how parts combine to become a whole, and how each part sees the whole from its own perspective. If such principles were any good, it shouldn't matter whether we're talking about hum...",
+    "image/_source": "/images/ebooks/3/thinking_in_promises.jpg",
+    "image/_alt": "Thinking in Promises",
+    "title/_source": "/book/6209/",
+    "title": "http://it-ebooks.info/book/6209/",
+    "title/_title": "Thinking in Promises",
+    "title/_text": "Thinking in Promises"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/3/abusing_the_internet_of_things_early_release.jpg",
+    "description": "A future with billions of connected \"things\" includes monumental security concerns. This practical book explores how malicious attackers can abuse popular IoT-based devices, including wireless LED lightbulbs, electronic door locks, baby mon...",
+    "image/_source": "/images/ebooks/3/abusing_the_internet_of_things_early_release.jpg",
+    "image/_alt": "Abusing the Internet of Things",
+    "title/_source": "/book/6207/",
+    "title": "http://it-ebooks.info/book/6207/",
+    "title/_title": "Abusing the Internet of Things",
+    "title/_text": "Abusing the Internet of Things"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/14/numpy_cookbook_2nd_edition.jpg",
+    "description": "NumPy has the ability to give you speed and high productivity. High performance calculations can be done easily with clean and efficient code, and it allows you to execute complex algebraic and mathematical computations in no time. This book will ...",
+    "image/_source": "/images/ebooks/14/numpy_cookbook_2nd_edition.jpg",
+    "image/_alt": "NumPy Cookbook, 2nd Edition",
+    "title/_source": "/book/6205/",
+    "title": "http://it-ebooks.info/book/6205/",
+    "title/_title": "NumPy Cookbook, 2nd Edition",
+    "title/_text": "NumPy Cookbook, 2nd Edition"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/14/learning_ionic.jpg",
+    "description": "With this book, you will learn hybrid mobile application development using Ionic. This book uses Cordova 5.0.0, Ionic CLI 1.5.0, and Ionic 1.0.0 to explain the concepts and build apps. To begin with, the book helps you understand where Ionic fits ...",
+    "image/_source": "/images/ebooks/14/learning_ionic.jpg",
+    "image/_alt": "Learning Ionic",
+    "title/_source": "/book/6203/",
+    "title": "http://it-ebooks.info/book/6203/",
+    "title/_title": "Learning Ionic",
+    "title/_text": "Learning Ionic"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/14/python_data_analysis.jpg",
+    "description": "Dive deeper into data analysis with the flexibility of Python and learn how its extensive range of scientific and mathematical libraries can be used to solve some of the toughest challenges in data analysis. Build your confidence and expertise and de...",
+    "image/_source": "/images/ebooks/14/python_data_analysis.jpg",
+    "image/_alt": "Python Data Analysis",
+    "title/_source": "/book/6201/",
+    "title": "http://it-ebooks.info/book/6201/",
+    "title/_title": "Python Data Analysis",
+    "title/_text": "Python Data Analysis"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/14/ggplot2_essentials.jpg",
+    "description": "ggplot2 is one of the most sophisticated and advanced packages of R and its use is constantly growing in the community of R programmers. This book is the perfect starting point for your journey in learning about one of the most refined and widely use...",
+    "image/_source": "/images/ebooks/14/ggplot2_essentials.jpg",
+    "image/_alt": "ggplot2 Essentials",
+    "title/_source": "/book/6199/",
+    "title": "http://it-ebooks.info/book/6199/",
+    "title/_title": "ggplot2 Essentials",
+    "title/_text": "ggplot2 Essentials"
+  },
+  {
+    "image": "http://it-ebooks.info/images/ebooks/14/sfml_blueprints.jpg",
+    "description": "SFML is a cross-platform software development library written in C++ with bindings available for many programming languages. This book contains useful information that you'll need to create any kind of 2D games. Starting with the basics of game progr...",
+    "image/_source": "/images/ebooks/14/sfml_blueprints.jpg",
+    "image/_alt": "SFML Blueprints",
+    "title/_source": "/book/6197/",
+    "title": "http://it-ebooks.info/book/6197/",
+    "title/_title": "SFML Blueprints",
+    "title/_text": "SFML Blueprints"
+  }
+]
