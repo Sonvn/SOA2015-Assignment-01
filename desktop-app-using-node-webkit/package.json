@@ -1,0 +1,10 @@
+{
+  "name": "library.management",
+  "main": "index.html",
+  "window": {
+    "show": false,
+    "position": "center",
+    "width": 1200,
+    "height": 600
+  }
+}
