@@ -27,7 +27,7 @@
                                 return book;
                             }
                         }
-                    });
+                    }).result;
                 }
             };
         })
@@ -47,15 +47,12 @@
                 var handleRespone = function (resp) {
                     if(resp.data.ok == 1) {
                         $scope.book = book = resp.data.book;
-                        console.log(resp.data.book);
                         $modalInstance.close($scope.book);
                     }
                 };
                 if($scope.editing._id) {
-                    console.log('update');
                     BookApi.update($scope.editing).then(handleRespone);
                 } else {
-                    console.log('insert');
                     BookApi.insert($scope.editing).then(handleRespone);
                 }
             };
@@ -75,7 +72,9 @@
             });
 
             $scope.addNewBook = function () {
-                BookModal.open({});
+                BookModal.open({}).then(function(book){
+                    $scope.books.push(book);
+                });
             };
 
             $scope.deleteBook = function (book) {
@@ -89,7 +88,9 @@
             };
 
             $scope.editBook = function (book) {
-                BookModal.open(book);
+                BookModal.open(book).then(function(newBook){
+                    if(newBook) angular.copy(newBook, book);
+                });
             };
         })
 
