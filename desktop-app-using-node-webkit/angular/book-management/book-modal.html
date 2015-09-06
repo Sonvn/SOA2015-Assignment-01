@@ -1,0 +1,35 @@
+<div class="modal-body">
+    <form name="form_book">
+        <div class="input-group">
+            <span class="input-group-addon"><strong>Name of book</strong></span>
+            <input class="form-control" type="text" ng-model="editing.title" required/>
+        </div>
+        <br/>
+        <img ng-src="{{editing.image}}"/>
+        <br/>
+        <br/>
+        <div class="input-group">
+            <span class="input-group-addon"><strong>Url Image</strong></span>
+            <input class="form-control" type="text" ng-model="editing.image" required/>
+        </div>
+        <br/>
+        <div class="input-group">
+            <span class="input-group-addon"><strong>Description</strong></span>
+            <textarea class="form-control" ng-model="editing.description" rows="5" required></textarea>
+        </div>
+
+        <div class="clearfix" style="margin-bottom: 20px;"></div>
+
+        <div class="input-group col-sm-4">
+            <span class="input-group-addon"><strong>Number</strong></span>
+            <input class="form-control" type="text" ng-model="editing.number" required/>
+            <span class="input-group-addon">books</span>
+        </div>
+        <div class="pull-right" style="margin-top: 20px">
+            <button class="btn btn-primary" type="button" ng-click="save()" ng-disabled="!form_book.$valid || !isChanged()">Save</button>
+            <button class="btn btn-danger" type="button" ng-click="close()">Cancel</button>
+        </div>
+
+        <div class="clearfix"></div>
+    </form>
+</div>
