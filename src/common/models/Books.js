@@ -7,6 +7,8 @@ var bookSchema = new Schema({
     title: {type : String, default : '', trim : true},
     description: {type : String, default : '', trim : true},
     image: {type : String, default : ''},
+    number: {type : Number, min: 0, default : 10},
+    available: {type : Number, min: 0, default : 10},
     created_at  : {type : Date, default : Date.now}
 });
 
@@ -21,12 +23,12 @@ var bookSchemaStaticFuncs = {
         } else {
             this.model('Book').find(criteria).exec(callback);
         }
+    },
+    borrowBook: function () {
+        
     }
 };
 
 _.assign(bookSchema.statics, bookSchemaStaticFuncs);
-
-
-
 
 module.exports = mongoose.model('Book', bookSchema);
