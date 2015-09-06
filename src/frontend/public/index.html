@@ -33,7 +33,7 @@
                         <p><strong>Description:</strong> {{book.description | limitContent: 20}}</p>
                         <p><strong>Available:</strong> {{book.available}}</p>
                         <!-- TODO: open modal for more info-->
-                        <a href="" class="btn btn-default" role="button">More info</a>
+                        <a href="" class="btn btn-default" ng-click="moreInfo(book)">More info</a>
                     </div>
                 </div>
             </div>

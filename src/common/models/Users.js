@@ -10,21 +10,13 @@ var userSchema = new Schema({
     role  : {type : String, default : ''}
 });
 
-//var userSchemaStaticFuncs = {
-//    updateOneBook: function (product_id, update, callback) {
-//        this.model('User').findOneAndUpdate({_id: product_id}, {$set: update}, callback);
-//    },
-//    listBook: function (options, callback) {
-//        var criteria = options.criteria || {};
-//        if(options.perPage && options.page) {
-//            this.model('User').find(criteria).limit(options.perPage).skip(options.perPage * options.page).exec(callback);
-//        } else {
-//            this.model('User').find(criteria).exec(callback);
-//        }
-//    }
-//};
-//
-//_.assign(userSchema.statics, userSchemaStaticFuncs);
+var userSchemaStaticFuncs = {
+    authorize: function (user, callback) {
+        this.model('User').findOne(user, callback);
+    }
+};
+
+_.assign(userSchema.statics, userSchemaStaticFuncs);
 
 
 module.exports = mongoose.model('User', userSchema);

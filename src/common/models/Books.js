@@ -13,9 +13,10 @@ var bookSchema = new Schema({
 });
 
 var bookSchemaStaticFuncs = {
-    updateOneBook: function (product_id, update, callback) {
-        this.model('Book').findOneAndUpdate({_id: product_id}, {$set: update}, callback);
+    updateOneBook: function (book_id, update, callback) {
+        this.model('Book').findOneAndUpdate({_id: book_id}, {$set: update}, callback);
     },
+
     listBook: function (options, callback) {
         var criteria = options.criteria || {};
         if(options.perPage && options.page) {

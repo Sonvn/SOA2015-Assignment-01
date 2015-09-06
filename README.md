@@ -5,7 +5,7 @@
  - Install [MongoDB](https://www.mongodb.org/downloads "mongoDB")
  - Run: `npm install -g gulp`
  - Run: `npm install`
- - Run MongoDB
+ - Run MongoDB 
  - Run: `gulp add-sample-data` to install db
 
 ### Start system:
