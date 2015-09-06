@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="library.client" ng-controller="library.client.ctrl">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -7,18 +7,37 @@
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 
-    <script src="/assets/js/lodash.min.js"></script>
     <script src="/assets/js/jquery-2.4.1.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="/assets/js/jquery-ui.min.js"></script>
     <script src="/assets/js/angular-1.4.3.js"></script>
-    <script src="/assets/js/angular-animate.js"></script>
-    <script src="/assets/js/angular-ui-router.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/ui-bootstrap-tpls.min.js"></script>
-    <script src="assets/js/ng-file-upload-all.js"></script>
+    <script src="/assets/js/masonry.pkgd.js"></script>
+    <script src="/assets/js/imagesloaded.min.js"></script>
+    <script src="app.js"></script>
+
 
 </head>
 <body>
+
+    <div class="container">
+        <h1>
+            Sách Trong thư viện
+        </h1>
+        <div class="row grid">
+            <div class="col-md-3 grid-item" ng-repeat="book in books">
+                <div class="thumbnail">
+                    <img ng-src="{{book.image}}" alt="...">
+                    <div class="caption">
+                        <h4><strong>Name:</strong> {{book.title}}</h4>
+                        <p><strong>Description:</strong> {{book.description | limitContent: 20}}</p>
+                        <p><strong>Available:</strong> {{book.available}}</p>
+                        <a href="" class="btn btn-default" role="button">More info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

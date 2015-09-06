@@ -10,15 +10,6 @@ module.exports = {
 
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({extended: true}));
-        app.use(passport.initialize());
-        app.use(multer({
-            dest: "./uploads/product-image/",
-            rename: function (fieldname, filename) {
-                return filename + "_" + Date.now();
-            }
-        }));
-
-        app.use("/uploads", express.static(staticConfig["upload-dir"]));
 
         app.use(express.static(__dirname + "/public"));
         app.use(express.static(__dirname + "/../common/public"));

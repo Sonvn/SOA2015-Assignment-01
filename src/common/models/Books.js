@@ -23,9 +23,6 @@ var bookSchemaStaticFuncs = {
         } else {
             this.model('Book').find(criteria).exec(callback);
         }
-    },
-    borrowBook: function () {
-        
     }
 };
 

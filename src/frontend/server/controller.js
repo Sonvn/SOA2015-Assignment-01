@@ -1,14 +1,17 @@
 var mongoose = require('mongoose');
-//var jwt = require('jsonwebtoken');
 var express = require("express");
+var Book = require('../../common/models/Books.js');
 
 var router = express.Router();
 
 module.exports = function (app, staticConfig, passport) {
     mongoose.connect('mongodb://localhost/library');
 
-    require("./book-controller.js")(router);
-    //require("./user-controller.js")(router, passport);
-    //
+    router.get("/books", function (req, res) {
+        Book.listBook({}, function (err, books) {
+            res.json(books);
+        })
+    });
+
     app.use("/api", router);
 };
