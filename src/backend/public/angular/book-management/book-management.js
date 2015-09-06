@@ -18,7 +18,7 @@
 
         .factory("BookModal", function ($modal) {
             return {
-                open: function (book, isEdit) {
+                open: function (book) {
                     return $modal.open({
                         templateUrl: "/angular/book-management/book-modal.html",
                         controller: "book-modal.ctrl",
@@ -32,8 +32,33 @@
             };
         })
 
-        .controller("book-modal.ctrl", function ($scope, $modalInstance, book) {
+        .controller("book-modal.ctrl", function ($scope, $modalInstance, book, BookApi) {
             $scope.book = book;
+
+            $scope.$watch("book", function(value) {
+                $scope.editing = _.cloneDeep(value);
+            });
+
+            $scope.isChanged = function () {
+                return !angular.equals($scope.editing, $scope.book);
+            };
+
+            $scope.save = function () {
+                var handleRespone = function (resp) {
+                    if(resp.data.ok == 1) {
+                        $scope.book = book = resp.data.book;
+                        console.log(resp.data.book);
+                        $modalInstance.close($scope.book);
+                    }
+                };
+                if($scope.editing._id) {
+                    console.log('update');
+                    BookApi.update($scope.editing).then(handleRespone);
+                } else {
+                    console.log('insert');
+                    BookApi.insert($scope.editing).then(handleRespone);
+                }
+            };
 
             $scope.close = function () {
                 $modalInstance.dismiss();
@@ -55,7 +80,11 @@
 
             $scope.deleteBook = function (book) {
                 BookApi.delete(book._id).then(function (resp) {
-                    console.log(resp.data);
+                    if(resp.data.ok == 1) {
+                        _.remove($scope.books, function(item) {
+                            return item._id == book._id;
+                        });
+                    }
                 })
             };
 

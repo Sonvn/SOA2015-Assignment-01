@@ -37,7 +37,7 @@ module.exports = function (app, staticConfig) {
 
         newBook.save(function (err) {
             if(!err) {
-                res.json(newBook);
+                res.json({ok: 1, book: newBook});
             } else {
                 res.json({ok: 0});
             }
@@ -51,7 +51,7 @@ module.exports = function (app, staticConfig) {
 
         Book.updateOneBook(book_id, newInfo, function (err, book) {
             if(book) {
-                res.json({ok: 1});
+                res.json({ok: 1, book: newInfo});
             } else {
                 res.json({ok: 0});
             }
@@ -59,9 +59,13 @@ module.exports = function (app, staticConfig) {
     });
 
     router.delete("/book/delete/:book_id", function (req, res) {
-        Book.listBook({}, function (err, books) {
-            res.json(books);
-        })
+        Book.findOneAndRemove({ _id: req.params.book_id }, function(err, book) {
+            if(book) {
+                res.json({ok: 1});
+            } else {
+                res.json({ok: 0});
+            }
+        });
     });
 
     app.use("/api", router);

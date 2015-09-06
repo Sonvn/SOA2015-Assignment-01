@@ -40,10 +40,10 @@
                     return Api.put("/api/book/update/" + book_id, book);
                 },
                 insert: function (book) {
-                    return Api.put("/api/book/insert/", book);
+                    return Api.post("/api/book/insert", book);
                 },
                 delete: function (book_id) {
-                    return Api.delete("/api/book/insert/" + book_id);
+                    return Api.delete("/api/book/delete/" + book_id);
                 }
             };
         })

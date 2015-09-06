@@ -16,7 +16,6 @@ var bookSchemaStaticFuncs = {
     updateOneBook: function (book_id, update, callback) {
         this.model('Book').findOneAndUpdate({_id: book_id}, {$set: update}, callback);
     },
-
     listBook: function (options, callback) {
         var criteria = options.criteria || {};
         if(options.perPage && options.page) {
