@@ -3,17 +3,43 @@
 (function ($) {
 
     angular.module('library.client', [
+        'ui.bootstrap'
     ])
-        .factory("bookApi", function($http) {
+        .factory("BookApi", function ($http) {
             return {
-                get : function (){
+                get: function () {
                     return $http.get("/api/books");
                 }
             };
         })
 
-        .controller("library.client.ctrl", function($scope, bookApi) {
-            bookApi.get()
+        .factory("BookModalInfo", function ($modal) {
+            return {
+                open: function (book) {
+                    return $modal.open({
+                        templateUrl: "book-modal-info.html",
+                        controller: "book-modal-info.ctrl",
+                        resolve: {
+                            book: function () {
+                                return book;
+                            }
+                        }
+                    });
+                }
+            };
+        })
+
+        .controller("book-modal-info.ctrl", function ($scope, $modalInstance, book) {
+            $scope.book = book;
+
+            $scope.close = function () {
+                $modalInstance.dismiss();
+            };
+        })
+
+
+        .controller("library.client.ctrl", function ($scope, BookApi, BookModalInfo) {
+            BookApi.get()
                 .then(function (resp) {
                     $scope.books = resp.data;
                 })
@@ -35,6 +61,10 @@
                     }, 0);
                 })
             ;
+
+            $scope.moreInfo = function (book) {
+                BookModalInfo.open(book);
+            }
         })
 
         .filter('limitContent', function () {
@@ -53,6 +83,7 @@
                 else return textToLimit;
             }
         })
+
     ;
 
 })(jQuery);

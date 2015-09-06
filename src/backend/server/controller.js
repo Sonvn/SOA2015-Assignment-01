@@ -13,7 +13,13 @@ module.exports = function (app, staticConfig) {
 
         User.authorize(admin, function (err, admin) {
             if (admin) {
-                res.json({ok: 1});
+                var returnUser = {
+                    role: admin.role,
+                    username: admin.username,
+                    display_name: admin.display_name
+                };
+
+                res.json({ok: 1, user: returnUser});
             } else {
                 res.json({ok: 0});
             }

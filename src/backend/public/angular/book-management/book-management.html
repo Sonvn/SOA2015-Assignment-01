@@ -1,0 +1,40 @@
+<h1>Books management</h1>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Responsive Hover Table</h3>
+                <div class="box-tools">
+                    <div class="input-group" style="width: 150px; float: right;">
+                        <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-sm btn-success" ng-click="addNewBook()" style="float: right; margin-right: 10px;"><i class="fa fa-plus"></i> Add a book</button>
+                </div>
+            </div>
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tr>
+                        <th>Name</th>
+                        <th>Number</th>
+                        <th>Available</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr ng-repeat="book in books">
+                        <td>{{book.title}}</td>
+                        <td>{{book.number}}</td>
+                        <td>{{book.available}}</td>
+                        <td>
+                            <a href="" ng-click="editBook(book)" style="margin-right: 10px;"><i class="fa fa-pencil"></i> edit</a>
+                            <a href="" ng-click="deleteBook(book)" style="margin-right: 10px;"><i class="fa fa-times"></i> delete</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
