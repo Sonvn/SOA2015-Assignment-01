@@ -1,10 +1,10 @@
 {
-  "name": "library.management",
+  "name": "Library Management",
   "main": "index.html",
+  "single-instance": false,
   "window": {
-    "show": false,
-    "position": "center",
-    "width": 1200,
-    "height": 600
+    "toolbar": false,
+    "show": true,
+    "icon": "favicon.ico"
   }
 }

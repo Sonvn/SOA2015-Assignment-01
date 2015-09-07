@@ -15,7 +15,7 @@
             $stateProvider
                 .state('login', {
                     url: '/login',
-                    templateUrl: "/angular/login/login.html",
+                    templateUrl: "./angular/login/login.html",
                     controller: "login.ctrl"
                 })
             ;

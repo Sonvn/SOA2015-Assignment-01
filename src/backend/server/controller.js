@@ -49,8 +49,11 @@ module.exports = function (app, staticConfig) {
         var book_id = req.params["book_id"];
         var newInfo = req.body;
 
+        delete newInfo._id;
+
         Book.updateOneBook(book_id, newInfo, function (err, book) {
             if(book) {
+                newInfo._id = book_id;
                 res.json({ok: 1, book: newInfo});
             } else {
                 res.json({ok: 0});

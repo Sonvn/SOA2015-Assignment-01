@@ -35,9 +35,7 @@
                     return Api.get("/api/books");
                 },
                 update: function (book) {
-                    var book_id = book._id;
-                    delete book._id;
-                    return Api.put("/api/book/update/" + book_id, book);
+                    return Api.put("/api/book/update/" + book._id, book);
                 },
                 insert: function (book) {
                     return Api.post("/api/book/insert", book);
