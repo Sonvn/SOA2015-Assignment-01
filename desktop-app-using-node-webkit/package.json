@@ -1,10 +1,12 @@
 {
-  "name": "Library Management",
-  "main": "index.html",
+  "name": "Library_Management",
+  "main": "./index.html",
+  "version": "0.1.0",
   "single-instance": false,
   "window": {
-    "toolbar": false,
-    "show": true,
-    "icon": "favicon.ico"
+	"title": "library management",
+	"toolbar": false,
+	"show": true,
+	"icon": "./favicon.ico"
   }
 }
