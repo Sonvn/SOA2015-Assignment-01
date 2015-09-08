@@ -3,7 +3,7 @@
 ### Installation:
  - Install [NodeJS](https://nodejs.org/en/) 
  - Install [MongoDB](https://www.mongodb.org/downloads "mongoDB")
- - Run: `npm install -g gulp`
+ - Run: `npm install -g gulp apidoc`
  - Run: `npm install`
  - Run MongoDB 
  - Run: `gulp add-sample-data` to install db
