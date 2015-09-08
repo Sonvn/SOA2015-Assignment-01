@@ -6,11 +6,13 @@ module.exports = {
 
         var app = express();
 
+        app.set('api_doc', __dirname + "/../../api-doc");
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({extended: true}));
 
         app.use(express.static(__dirname + "/public"));
         app.use(express.static(__dirname + "/../common/public"));
+        app.use(express.static(__dirname + "/../../api-doc"));
 
         require("./server/controller.js")(app, staticConfig);
 

@@ -1,4 +1,5 @@
 var express = require("express");
+var path    = require("path");
 var Book = require('../../common/models/Books.js');
 var User = require('../../common/models/Users.js');
 
@@ -185,6 +186,10 @@ module.exports = function (app, staticConfig) {
                 res.json({ok: 0});
             }
         });
+    });
+
+    app.get("/help", function (req, res) {
+        res.sendFile(path.join(__dirname + "/../../../api-doc/index.html"));
     });
 
     app.use("/api", router);
