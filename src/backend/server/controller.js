@@ -6,6 +6,30 @@ var router = express.Router();
 
 module.exports = function (app, staticConfig) {
 
+    /**
+     * @api {post} /admin/authorize  Login admin user
+     * @apiName Login
+     * @apiGroup Security
+     * @apiParamExample {json} Request-Example:
+     * {
+     *      username: "admin",
+     *      password: "123qwe"
+     * }
+     * @apiSuccessExample {json} Success-Response:
+     * {
+     *      ok: 1,
+     *      user: {
+     *          role: "admin",
+     *          username: "admin",
+     *          display_name: "Admin"
+     *      }
+     * }
+     * @apiErrorExample {json} Error-Response:
+     * {
+     *      ok: 0
+     * }
+     *
+     */
     router.post("/admin/authorize", function (req, res) {
 
         var admin = req.body;
@@ -26,12 +50,59 @@ module.exports = function (app, staticConfig) {
         })
     });
 
+    /**
+     * @api {get} /books  Get all books
+     * @apiName Get Books
+     * @apiGroup Book
+     * @apiSuccessExample {json} Success-Response:
+     * [
+     *      {
+     *           "_id" : ObjectId("55ec708172004b8c088cac12"),
+     *           "created_at" : ISODate("2015-09-06T16:57:37.679Z"),
+     *           "available" : 10,
+     *           "number" : 10,
+     *           "image" : "http://it-ebooks.info/images/ebooks/14/learning_pandas.jpg",
+     *           "description" : "This learner's guide..."
+     *      }
+     * ]
+     *
+     */
     router.get("/books", function (req, res) {
         Book.listBook({}, function (err, books) {
             res.json(books);
         })
     });
 
+    /**
+     * @api {post} /book/insert  Insert a new book
+     * @apiName Insert Book
+     * @apiGroup Book
+     * @apiParamExample {json} Request-Example:
+     * {
+     *      "number" : 10,
+     *      "image" : "http://it-ebooks.info/images/ebooks/14/learning_pandas.jpg",
+     *      "description" : "This learner's guide...",
+     *      "title" : "Learning pandas"
+     * }
+     * @apiSuccessExample {json} Success-Response:
+     * {
+     *      ok: 1,
+     *      book: {
+     *          "_id" : ObjectId("55ec708172004b8c088cac12"),
+     *           "created_at" : ISODate("2015-09-06T16:57:37.679Z"),
+     *           "available" : 10,
+     *           "number" : 10,
+     *           "image" : "http://it-ebooks.info/images/ebooks/14/learning_pandas.jpg",
+     *           "description" : "This learner's guide...",
+     *           "title" : "Learning pandas"
+     *      }
+     * }
+     * @apiErrorExample {json} Error-Response:
+     * {
+     *      ok: 0
+     * }
+     *
+     */
     router.post("/book/insert", function (req, res) {
         var newBook = new Book(req.body);
 
@@ -44,12 +115,43 @@ module.exports = function (app, staticConfig) {
         });
     });
 
+    /**
+     * @api {put} /book/update/:book_id  Update a book
+     * @apiName Update Book
+     * @apiGroup Book
+     * @apiParamExample {json} Request-Example:
+     * {
+     *      "number" : 10,
+     *      "image" : "http://it-ebooks.info/images/ebooks/14/learning_pandas.jpg",
+     *      "description" : "This learner's guide...",
+     *      "title" : "Learning pandas"
+     * }
+     * @apiSuccessExample {json} Success-Response:
+     * {
+     *      ok: 1,
+     *      book: {
+     *          "_id" : ObjectId("55ec708172004b8c088cac12"),
+     *           "created_at" : ISODate("2015-09-06T16:57:37.679Z"),
+     *           "available" : 10,
+     *           "number" : 10,
+     *           "image" : "http://it-ebooks.info/images/ebooks/14/learning_pandas.jpg",
+     *           "description" : "This learner's guide..."
+     *      }
+     * }
+     * @apiErrorExample {json} Error-Response:
+     * {
+     *      ok: 0
+     * }
+     *
+     */
     router.put("/book/update/:book_id", function (req, res) {
 
         var book_id = req.params["book_id"];
         var newInfo = req.body;
 
-        delete newInfo._id;
+        if(newInfo._id) {
+            delete newInfo._id;
+        }
 
         Book.updateOneBook(book_id, newInfo, function (err, book) {
             if(book) {
@@ -61,6 +163,20 @@ module.exports = function (app, staticConfig) {
         })
     });
 
+    /**
+     * @api {delete} /book/delete/:book_id  Insert a new book
+     * @apiName Insert Book
+     * @apiGroup Book
+     * @apiSuccessExample {json} Success-Response:
+     * {
+     *      ok: 1
+     * }
+     * @apiErrorExample {json} Error-Response:
+     * {
+     *      ok: 0
+     * }
+     *
+     */
     router.delete("/book/delete/:book_id", function (req, res) {
         Book.findOneAndRemove({ _id: req.params.book_id }, function(err, book) {
             if(book) {
