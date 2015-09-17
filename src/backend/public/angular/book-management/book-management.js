@@ -3,6 +3,7 @@
 (function () {
 
     angular.module('library.management.book-management', [
+        'ngFileUpload'
     ])
 
         .config(function ($stateProvider) {
@@ -32,7 +33,7 @@
             };
         })
 
-        .controller("book-modal.ctrl", function ($scope, $modalInstance, book, BookApi) {
+        .controller("book-modal.ctrl", function ($scope, $modalInstance, book, BookApi, Upload) {
             $scope.book = book;
 
             $scope.$watch("book", function(value) {
@@ -43,18 +44,45 @@
                 return !angular.equals($scope.editing, $scope.book);
             };
 
+
+            $scope.file_upload;
+
+
             $scope.save = function () {
-                var handleRespone = function (resp) {
-                    if(resp.data.ok == 1) {
-                        $scope.book = book = resp.data.book;
-                        $modalInstance.close($scope.book);
-                    }
-                };
+                //var handleRespone = function (resp) {
+                //    if(resp.data.ok == 1) {
+                //        $scope.book = book = resp.data.book;
+                //        $modalInstance.close($scope.book);
+                //    }
+                //};
                 if($scope.editing._id) {
-                    BookApi.update($scope.editing).then(handleRespone);
+                    Upload
+                        .upload({
+                            url: "/api/book/insert",
+                            fields: $scope.editing,
+                            file: $scope.file_upload
+                        })
+                        .success(function (data) {
+                            if(data.ok == 1) {
+                                $scope.book = book = data.book;
+                                $modalInstance.close($scope.book);
+                            }
+                        });
                 } else {
-                    BookApi.insert($scope.editing).then(handleRespone);
+                    Upload
+                        .upload({
+                            url: "/api/book/update" + $scope.editing._id,
+                            fields: $scope.editing,
+                            file: $scope.file_upload
+                        })
+                        .success(function (data) {
+                            if(data.ok == 1) {
+                                $scope.book = book = data.book;
+                                $modalInstance.close($scope.book);
+                            }
+                        });
                 }
+
             };
 
             $scope.close = function () {
@@ -72,7 +100,15 @@
             });
 
             $scope.addNewBook = function () {
-                BookModal.open({}).then(function(book){
+                var newdata = {
+                    image_type: "file",
+                    available: 10,
+                    number: 10,
+                    description: "121212",
+                    title: "asdfasfd"
+                };
+
+                BookModal.open(newdata).then(function(book){
                     $scope.books.push(book);
                 });
             };

@@ -5,7 +5,7 @@ var User = require('../../common/models/Users.js');
 
 var router = express.Router();
 
-module.exports = function (app, staticConfig) {
+module.exports = function (app, staticConfig, multer) {
 
     /**
      * @api {post} /admin/authorize  Login admin user
@@ -104,20 +104,32 @@ module.exports = function (app, staticConfig) {
      * }
      *
      */
-    router.post("/book/insert", function (req, res) {
-        var newBook = new Book(req.body);
-
-        newBook.save(function (err) {
-            if(!err) {
-                res.json({ok: 1, book: newBook});
-            } else {
-                res.json({ok: 0});
+    router.post("/book/insert",
+        multer({
+            dest: "./uploads",
+            rename: function (fieldname, filename) {
+                return filename + "_" + Date.now();
             }
-        });
-    });
+        }),
+        function (req, res) {
+            var newBook = new Book(req.body);
+
+            if(newBook.image_type == "file") {
+                newBook.image = req.files.file.name;
+            }
+
+            newBook.save(function (err) {
+                if(!err) {
+                    res.json({ok: 1, book: newBook});
+                } else {
+                    res.json({ok: 0});
+                }
+            });
+        }
+    );
 
     /**
-     * @api {put} /book/update/:book_id  Update a book
+     * @api {post} /book/update/:book_id  Update a book
      * @apiName Update Book
      * @apiGroup Book
      * @apiParamExample {json} Request-Example:
@@ -145,24 +157,36 @@ module.exports = function (app, staticConfig) {
      * }
      *
      */
-    router.put("/book/update/:book_id", function (req, res) {
-
-        var book_id = req.params["book_id"];
-        var newInfo = req.body;
-
-        if(newInfo._id) {
-            delete newInfo._id;
-        }
-
-        Book.updateOneBook(book_id, newInfo, function (err, book) {
-            if(book) {
-                newInfo._id = book_id;
-                res.json({ok: 1, book: newInfo});
-            } else {
-                res.json({ok: 0});
+    router.post("/book/update/:book_id",
+        multer({
+            dest: staticConfig["uppload-dir"],
+            rename: function (fieldname, filename) {
+                return filename + "_" + Date.now();
             }
-        })
-    });
+        }),
+        function (req, res) {
+
+            var book_id = req.params["book_id"];
+            var newInfo = req.body;
+
+            if(newInfo._id) {
+                delete newInfo._id;
+            }
+
+            if(newBook.image_type == "file") {
+                newBook.image = req.files.file.name;
+            }
+
+            Book.updateOneBook(book_id, newInfo, function (err, book) {
+                if(book) {
+                    newInfo._id = book_id;
+                    res.json({ok: 1, book: newInfo});
+                } else {
+                    res.json({ok: 0});
+                }
+            })
+        }
+    );
 
     /**
      * @api {delete} /book/delete/:book_id  Insert a new book
