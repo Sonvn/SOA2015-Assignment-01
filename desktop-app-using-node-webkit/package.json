@@ -1,12 +1,58 @@
 {
-  "name": "Library_Management",
-  "main": "./index.html",
-  "version": "0.1.0",
-  "single-instance": false,
-  "window": {
-	"title": "library management",
-	"toolbar": false,
-	"show": true,
-	"icon": "./favicon.ico"
-  }
+    "webexe_settings": {
+        "linux-x32": false, 
+        "export_dir": "output", 
+        "windows-x64": true, 
+        "download_dir": "C:\\Users\\QUOCBAO\\Downloads", 
+        "nw_compression_level": 9, 
+        "mac-x32": false, 
+        "windows-x32": false, 
+        "mac-x64": true, 
+        "nw_version": "0.12.3", 
+        "force_download": false, 
+        "linux-x64": false
+    }, 
+    "js-flags": "", 
+    "name": "library_management", 
+    "nodejs": true, 
+    "user-agent": "", 
+    "chromium-args": "", 
+    "additional_trust_anchors": "", 
+    "single-instance": false, 
+    "inject-js-end": "", 
+    "keywords": [], 
+    "window": {
+        "transparent": false, 
+        "fullscreen": false, 
+        "kiosk_emulation": false, 
+        "resizable": true, 
+        "show": true, 
+        "always-on-top": false, 
+        "frame": true, 
+        "title": "library management", 
+        "kiosk": false, 
+        "height": 480, 
+        "exe_icon": "Docs@1024w.png", 
+        "visible": true, 
+        "as_desktop": false, 
+        "position": "center", 
+        "show_in_taskbar": true, 
+        "mac_icon": "", 
+        "width": 640, 
+        "toolbar": false, 
+        "icon": "Docs@1024w.png"
+    }, 
+    "version": "0.1.0", 
+    "snapshot": "", 
+    "node-main": "", 
+    "webkit": {
+        "page-cache": false, 
+        "java": false, 
+        "plugin": false
+    }, 
+    "inject-js-start": "", 
+    "node-remote": "", 
+    "main": "./index.html", 
+    "app_name": "desktop-app-using-node-webkit", 
+    "description": ""
 }
