@@ -55,7 +55,7 @@
                 //        $modalInstance.close($scope.book);
                 //    }
                 //};
-                if($scope.editing._id) {
+                if(!$scope.editing._id) {
                     Upload
                         .upload({
                             url: "/api/book/insert",
@@ -71,9 +71,9 @@
                 } else {
                     Upload
                         .upload({
-                            url: "/api/book/update" + $scope.editing._id,
+                            url: "/api/book/update/" + $scope.editing._id,
                             fields: $scope.editing,
-                            file: $scope.file_upload
+                            file: $scope.file_upload || {}
                         })
                         .success(function (data) {
                             if(data.ok == 1) {

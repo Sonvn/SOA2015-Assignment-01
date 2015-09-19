@@ -1,5 +1,5 @@
 module.exports = {
-    "http-frontend-port": 2000,
-    "http-backend-port": 8000,
+    "http-frontend-port": 4000,
+    "http-backend-port": 5000,
     "upload-dir": "./uploads"
 };

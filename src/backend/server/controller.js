@@ -159,7 +159,7 @@ module.exports = function (app, staticConfig, multer) {
      */
     router.post("/book/update/:book_id",
         multer({
-            dest: staticConfig["uppload-dir"],
+            dest: "./uploads",
             rename: function (fieldname, filename) {
                 return filename + "_" + Date.now();
             }
@@ -167,20 +167,25 @@ module.exports = function (app, staticConfig, multer) {
         function (req, res) {
 
             var book_id = req.params["book_id"];
-            var newInfo = req.body;
+            var newBook = req.body;
 
-            if(newInfo._id) {
-                delete newInfo._id;
+            if(newBook._id) {
+                delete newBook._id;
             }
 
-            if(newBook.image_type == "file") {
+            if(req.files.file) {
+                console.log(req.files.file);
+            }
+
+            if(newBook.image_type == "file" && req.files.file) {
+
                 newBook.image = req.files.file.name;
             }
 
-            Book.updateOneBook(book_id, newInfo, function (err, book) {
+            Book.updateOneBook(book_id, newBook, function (err, book) {
                 if(book) {
-                    newInfo._id = book_id;
-                    res.json({ok: 1, book: newInfo});
+                    newBook._id = book_id;
+                    res.json({ok: 1, book: newBook});
                 } else {
                     res.json({ok: 0});
                 }

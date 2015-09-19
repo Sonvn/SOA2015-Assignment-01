@@ -10,7 +10,7 @@
  
 ### Build:
  - Build "Api-doc" run `gulp create-api-doc`
- - Build "App desktop" run `nwbuild -p [os] -v 0.12.3 -o [path build folder] ./desktop-app-using-node-webkit` (os: 'win32', 'win64', 'osx32', 'osx64', 'linux32', 'linux64') 
+ - Build "App desktop" Using [Web2Executable](https://github.com/jyapayne/Web2Executable)
 
 ### Start system:
  - Run: `node run-server.js`
