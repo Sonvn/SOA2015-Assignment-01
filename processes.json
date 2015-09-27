@@ -2,9 +2,8 @@
   "apps" : [{
     "name"        : "SOA_Assignment_1",
     "script"      : "run-server.js",
-    "watch"       : true,
+    "watch"       : false,
     "merge_logs"  : true,
-    "ignore_watch": ["node_modules", "uploads", "api-doc"],
     "env": {
       "NODE_ENV": "production"
     }
