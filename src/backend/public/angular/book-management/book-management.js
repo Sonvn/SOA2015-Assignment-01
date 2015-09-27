@@ -11,7 +11,7 @@
             $stateProvider
                 .state('book-management', {
                     url: '/book-management',
-                    templateUrl: "./angular/book-management/book-management.html",
+                    templateUrl: "/angular/book-management/book-management.html",
                     controller: "book-management.ctrl"
                 })
             ;
@@ -21,7 +21,7 @@
             return {
                 open: function (book) {
                     return $modal.open({
-                        templateUrl: "./angular/book-management/book-modal.html",
+                        templateUrl: "/angular/book-management/book-modal.html",
                         controller: "book-modal.ctrl",
                         resolve: {
                             book: function () {
