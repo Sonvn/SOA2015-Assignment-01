@@ -5,12 +5,22 @@
             <input class="form-control" type="text" ng-model="editing.title" required/>
         </div>
         <br/>
-        <img ng-src="{{editing.image}}"/>
+        <div class="input-group col-md-6">
+            <img ng-src="{{editing.image}}" ng-if="editing.image.indexOf('http://') > -1" style="width: 100%"/>
+            <img ng-src="/image/{{editing.image}}" ng-if="editing.image.indexOf('http://') == -1" style="width: 100%"/>
+        </div>
         <br/>
         <br/>
         <div class="input-group">
             <span class="input-group-addon"><strong>Url Image</strong></span>
-            <input class="form-control" type="text" ng-model="editing.image" required/>
+            <input class="form-control" type="text" ng-model="editing.image" ng-disabled="editing.image_type == 'file'"/>
+            <span class="input-group-addon"><input type="radio" ng-model="editing.image_type" value="url"></span>
+        </div>
+        <div>Or</div>
+        <div class="input-group">
+            <span class="input-group-addon"><strong>File Image</strong></span>
+            <input class="form-control" type="file" ng-model="file_upload" ngf-select ng-disabled="editing.image_type == 'url'"/>
+            <span class="input-group-addon"><input type="radio" ng-model="editing.image_type" value="file"></span>
         </div>
         <br/>
         <div class="input-group">
@@ -26,7 +36,8 @@
             <span class="input-group-addon">books</span>
         </div>
         <div class="pull-right" style="margin-top: 20px">
-            <button class="btn btn-primary" type="button" ng-click="save()" ng-disabled="!form_book.$valid || !isChanged()">Save</button>
+            <!--<button class="btn btn-primary" type="button" ng-click="save()" ng-disabled="!form_book.$valid || !isChanged()">Save</button>-->
+            <button class="btn btn-primary" type="button" ng-click="save()">Save</button>
             <button class="btn btn-danger" type="button" ng-click="close()">Cancel</button>
         </div>
 

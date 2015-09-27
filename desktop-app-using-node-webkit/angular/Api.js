@@ -8,7 +8,7 @@
 
         .provider("Api", function () {
 
-            var serverUrl = "http://localhost:8000";
+            var serverUrl = "http://128.199.158.16:5000";
 
             this.$get = function ($http) {
                 return {

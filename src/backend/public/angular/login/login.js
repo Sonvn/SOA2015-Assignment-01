@@ -6,7 +6,7 @@
     ])
         .factory("User", function() {
             return {
-                isLogged : true
+                isLogged : false
             };
         })
 

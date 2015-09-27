@@ -11,7 +11,7 @@
             $stateProvider
                 .state('book-management', {
                     url: '/book-management',
-                    templateUrl: "/angular/book-management/book-management.html",
+                    templateUrl: "./angular/book-management/book-management.html",
                     controller: "book-management.ctrl"
                 })
             ;
@@ -21,7 +21,7 @@
             return {
                 open: function (book) {
                     return $modal.open({
-                        templateUrl: "/angular/book-management/book-modal.html",
+                        templateUrl: "./angular/book-management/book-modal.html",
                         controller: "book-modal.ctrl",
                         resolve: {
                             book: function () {
@@ -49,12 +49,6 @@
 
 
             $scope.save = function () {
-                //var handleRespone = function (resp) {
-                //    if(resp.data.ok == 1) {
-                //        $scope.book = book = resp.data.book;
-                //        $modalInstance.close($scope.book);
-                //    }
-                //};
                 if(!$scope.editing._id) {
                     Upload
                         .upload({
@@ -95,6 +89,8 @@
                 $state.go('login');
             }
 
+            $scope.User = User;
+
             BookApi.get().then(function (resp) {
                 $scope.books = resp.data;
             });
@@ -103,9 +99,7 @@
                 var newdata = {
                     image_type: "file",
                     available: 10,
-                    number: 10,
-                    description: "121212",
-                    title: "asdfasfd"
+                    number: 10
                 };
 
                 BookModal.open(newdata).then(function(book){
