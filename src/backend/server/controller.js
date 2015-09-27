@@ -161,10 +161,13 @@ module.exports = function (app, staticConfig, multer) {
         multer({
             dest: "./uploads",
             rename: function (fieldname, filename) {
+                console.log("run 1212");
                 return filename + "_" + Date.now();
             }
         }),
         function (req, res) {
+
+            console.log("run 1212");
 
             var book_id = req.params["book_id"];
             var newBook = req.body;
@@ -178,7 +181,6 @@ module.exports = function (app, staticConfig, multer) {
             }
 
             if(newBook.image_type == "file" && req.files.file) {
-
                 newBook.image = req.files.file.name;
             }
 
