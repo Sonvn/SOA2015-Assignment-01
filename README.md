@@ -14,8 +14,8 @@
 
 ### Start system:
  - Run: `node run-server.js`
- - For normal user: [http://localhost:2000](http://localhost:2000)
- - Access management console with: [http://localhost:8000](http://localhost:8000)
+ - For normal user: [http://localhost:4000](http://localhost:4000)
+ - Access management console with: [http://localhost:5000](http://localhost:5000)
  
 ### Other:
- - What to view api doc please build api-doc before go to link [http://localhost:8000/help](http://localhost:8000/help)
+ - What to view api doc please build api-doc before go to link [http://localhost:5000/help](http://localhost:5000/help)
