@@ -161,7 +161,7 @@ module.exports = function (app, staticConfig, multer) {
         multer({
             dest: "./uploads",
             rename: function (fieldname, filename) {
-                console.log("run 1212");
+                console.log("run 1233333");
                 return filename + "_" + Date.now();
             }
         }),
