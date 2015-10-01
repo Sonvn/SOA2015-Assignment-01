@@ -1,0 +1,21 @@
+{
+    "main": "app://LibraryManagement/index.html",
+    "name": "library_management",
+    "window": {
+        "fullscreen": false, 
+        "resizable": false, 
+        "show": true, 
+        "frame": true,
+        "title": "library management", 
+        "exe_icon": "banking2.png",
+        "visible": true,
+        "position": "center",
+        "show_in_taskbar": true, 
+        "height": 600, 
+        "width": 800,
+        "icon": "banking2.png",
+        "toolbar": false
+    }, 
+    "single-instance": false, 
+    "version": "0.1.0"
+}
