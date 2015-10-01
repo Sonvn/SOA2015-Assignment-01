@@ -54,7 +54,7 @@
                 if(!$scope.editing._id) {
                     Upload
                         .upload({
-                            url: "/api/book/insert",
+                            url: $scope.server_url + "/api/book/insert",
                             fields: $scope.editing,
                             file: $scope.file_upload
                         })
@@ -67,7 +67,7 @@
                 } else {
                     Upload
                         .upload({
-                            url: "/api/book/update/" + $scope.editing._id,
+                            url: $scope.server_url + "/api/book/update/" + $scope.editing._id,
                             fields: $scope.editing,
                             file: $scope.file_upload || {}
                         })

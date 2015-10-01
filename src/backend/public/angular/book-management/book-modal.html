@@ -6,8 +6,8 @@
         </div>
         <br/>
         <div class="input-group col-md-6">
-            <img ng-src="{{editing.image}}" ng-if="editing.image.indexOf('http://') > -1" style="width: 100%"/>
-            <img ng-src="server_url + '/image/{{editing.image}}'" ng-if="editing.image.indexOf('http://') == -1" style="width: 100%"/>
+            <img ng-src="{{editing.image}}" ng-if="editing.image.indexOf('http://') > -1 || editing.image.indexOf('https://') > -1" style="width: 100%"/>
+            <img ng-src="/image/{{editing.image}}" ng-if="editing.image.indexOf('http://') == -1 || editing.image.indexOf('https://') == -1" style="width: 100%"/>
         </div>
         <br/>
         <br/>
