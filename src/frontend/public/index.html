@@ -27,8 +27,8 @@
         <div class="row grid">
             <div class="col-md-3 grid-item" ng-repeat="book in books">
                 <div class="thumbnail">
-                    <img ng-src="{{book.image}}" ng-if="book.image.indexOf('http://') > -1" style="width: 100%"/>
-                    <img ng-src="/image/{{book.image}}" ng-if="book.image.indexOf('http://') == -1" style="width: 100%"/>
+                    <img ng-src="{{book.image}}" ng-if="book.image.indexOf('http://') > -1 || book.image.indexOf('https://') > -1" style="width: 100%"/>
+                    <img ng-src="/image/{{book.image}}" ng-if="book.image.indexOf('http://') == -1 || book.image.indexOf('https://') == -1" style="width: 100%"/>
                     <div class="caption">
                         <h4><strong>Name:</strong> {{book.title}}</h4>
                         <p><strong>Description:</strong> {{book.description | limitContent: 20}}</p>

@@ -3,7 +3,7 @@
 ### Installation:
  - Install [NodeJS](https://nodejs.org/en/) 
  - Install [MongoDB](https://www.mongodb.org/downloads "mongoDB")
- - Run: `npm install -g gulp apidoc nw-builder`
+ - Run: `npm install -g gulp apidoc`
  - Run: `npm install`
  - Run MongoDB 
  - Run: `gulp add-sample-data` to install db
@@ -18,4 +18,8 @@
  - Access management console with: [http://localhost:5000](http://localhost:5000)
  
 ### Other:
- - What to view api doc please build api-doc before go to link [http://localhost:5000/help](http://localhost:5000/help)
+ - Want to view api doc please build api-doc before go to link [http://localhost:5000/help](http://localhost:5000/help)
+ 
+### Server:
+ - for student: [http://128.199.158.16:4000/](http://128.199.158.16:4000/)
+ - for manager: [http://128.199.158.16:5000/](http://128.199.158.16:5000/)
