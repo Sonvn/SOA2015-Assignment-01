@@ -197,7 +197,7 @@ module.exports = function (app, staticConfig, multer) {
 
     /**
      * @api {delete} /book/delete/:book_id  Insert a new book
-     * @apiName Insert Book
+     * @apiName Delete Book
      * @apiGroup Book
      * @apiSuccessExample {json} Success-Response:
      * {
